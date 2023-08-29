@@ -8,7 +8,7 @@ const options = [
   "Inicio",
   "Series",
   "Peliculas",
-  "Agregados recientemente",
+  "Agregadas recientemente",
   "Populares",
   "Mis Peliculas",
   "Mi lista",
@@ -34,7 +34,7 @@ const Drawer = () => {
               {options.map((option) => (
                 <li
                   key={option}
-                  className="tracking-widest text-2xl cursor-pointer"
+                  className="tracking-widest text-xl cursor-pointer font-thin hover:text-[#64EEBC]"
                 >
                   {option}
                 </li>
@@ -42,14 +42,20 @@ const Drawer = () => {
             </ul>
 
             <button className="flex items-center my-28 gap-4" onClick={toggle}>
-              <Image src="/plus.svg" width={25} height={25} alt="play icon" />
-              <p className="tracking-widest text-2xl cursor-pointer">
+              <Image
+                src="/plus.svg"
+                width={25}
+                height={25}
+                alt="play icon"
+                className=""
+              />
+              <p className="tracking-widest text-xl cursor-pointer hover:text-[#64EEBC] uppercase">
                 Agregar pelicula
               </p>
             </button>
 
-            <button className="tracking-widest text-2xl cursor-pointer">
-              Cerrar Sesion
+            <button className="tracking-widest text-xl cursor-pointer hover:text-[#64EEBC] uppercase font-thin">
+              <p>Cerrar Sesion</p>
             </button>
           </div>
         </div>

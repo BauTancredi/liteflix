@@ -1,9 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Bebas_Neue } from "next/font/google";
+import { Roboto } from "next/font/google";
 
-const bebas = Bebas_Neue({
-  weight: "400",
+const roboto = Roboto({
+  weight: ["100", "300", "400", "700"],
   subsets: ["latin"],
 });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={bebas.className}>{children}</body>
+      <body className={`${roboto.className} uppercase`}>{children}</body>
     </html>
   );
 }

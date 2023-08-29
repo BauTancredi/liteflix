@@ -11,14 +11,13 @@ const baseStyle = {
   justifyContent: "center",
   gap: "1rem",
   alignItems: "center",
-  padding: "2rem",
+  padding: "1.5rem",
   borderWidth: 1,
   borderColor: "#eeeeee",
   borderStyle: "dashed",
   outline: "none",
   transition: "border .24s ease-in-out",
   width: "75%",
-  margin: "5rem 0",
 };
 
 const focusedStyle = {
@@ -53,8 +52,8 @@ const AddMovie = () => {
     open && (
       <div className="bg-[#242424] h-screen absolute top-0 w-full ">
         <Header />
-        <div className="mt-10 px-6">
-          <h3 className="text-center tracking-widest text-[#64EEBC] text-2xl">
+        <div className="px-6">
+          <h3 className="text-center tracking-widest text-[#64EEBC] text-2xl my-20">
             Agregar pelicula
           </h3>
           <form className="flex flex-col gap-4 items-center">
@@ -66,19 +65,21 @@ const AddMovie = () => {
             <input
               type="text"
               placeholder="Titulo"
-              className="bg-transparent border-b-2 text-center w-3/4 focus:outline-none focus:border-[#64EEBC] mb-20"
+              className="bg-transparent border-b-2 border-gray-300 text-center w-3/4 focus:outline-none focus:border-[#64EEBC] my-14 uppercase text-xl tracking-widest"
             />
             <button
               disabled
-              className="bg-white transition-colors disabled:bg-gray-300 py-4 gap-5  tracking-widest text-2xl  text-[#242424] w-3/4"
+              className="bg-white transition-colors disabled:bg-gray-300 py-4    text-[#242424] w-3/4"
             >
-              Subir pelicula
+              <p className="tracking-widest text-xl uppercase">
+                Subir pelicula
+              </p>
             </button>
             <button
               onClick={toggle}
-              className="border border-gray-400 py-4 gap-5 bg-[#242424] tracking-widest text-2xl w-3/4"
+              className="border border-gray-400 py-4  bg-[#242424] tracking-widest text-2xl w-3/4"
             >
-              Salir
+              <p className="tracking-widest text-xl uppercase">Salir</p>
             </button>
           </form>
         </div>

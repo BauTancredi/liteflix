@@ -69,17 +69,17 @@ export default async function Home() {
           <p className="text-xl tracking-widest font-thin text-center">
             ORIGINAL DE <span className="font-bold">LITEFLIX</span>
           </p>
-          <p className="text-8xl text-center tracking-wider  mt-5 mb-20 text-[#64EEBC]">
+          <p className="text-8xl text-center tracking-widest  mt-5 mb-20 text-[#64EEBC]">
             {featuredMovie.title}
           </p>
           <div className="flex flex-col items-center gap-6 ">
-            <button className="flex  py-4 w-96 justify-center gap-5 bg-[#242424] tracking-widest text-2xl items-center ">
+            <button className="flex  py-4 w-96 justify-center gap-5 bg-[#242424]  items-center">
               <Image src="/play_2.svg" width={30} height={30} alt="play icon" />
-              REPRODUCIR
+              <p className="tracking-widest text-2xl font-light">REPRODUCIR</p>
             </button>
             <button className="flex border border-gray-400 py-4 w-96  justify-center gap-5 bg-[#242424] tracking-widest text-2xl items-center">
               <Image src="/plus.svg" width={30} height={30} alt="play icon" />
-              MI LISTA
+              <p className="tracking-widest text-2xl font-light">MI LISTA</p>
             </button>
           </div>
         </section>

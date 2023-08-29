@@ -31,14 +31,14 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
       />
       <div className="group-hover:hidden absolute w-full h-full  top-0 opacity-90 flex flex-col justify-end items-center bg-gradient-to-t from-gray-900">
         <Image src="/play.svg" width={80} height={80} alt="play icon" />
-        <p className="text-center text-2xl tracking-widest my-8 uppercase font-semibold">
+        <p className="text-center text-2xl tracking-widest my-8 font-light">
           {movie.title}
         </p>
       </div>
       <div className="group-hover:flex hidden absolute w-full h-full top-0  flex-col justify-end  bg-black/50 px-10">
         <div className="flex gap-3 items-center text-left">
           <Image src="/play.svg" width={40} height={40} alt="play icon" />
-          <p className="text-xl tracking-widest uppercase font-semibold text-left">
+          <p className="text-xl tracking-widest font-light  text-left">
             {movie.title}
           </p>
         </div>
@@ -50,11 +50,11 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
               height={25}
               alt="play icon"
             />
-            <p className="text-center tracking-widest uppercase ">
+            <p className="text-center tracking-widest font-light ">
               {movie.vote_average}
             </p>
           </div>
-          <p className="text-center tracking-widest my-6 uppercase font-semibold">
+          <p className="text-center tracking-widest my-6 font-light">
             {convertDateToYear(movie.release_date)}
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function MovieList({ popularMovies }: MovieListProps) {
         className="relative flex justify-center gap-3 "
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
-        <h3 className="text-3xl tracking-wider text-center mt-10 mb-10 cursor-pointer">
+        <h3 className="text-2xl tracking-widest text-center mt-10 mb-10 cursor-pointer font-thin">
           VER: &nbsp;
           <span className="font-bold ">
             {selectedCategory === "popular" ? "POPULARES" : "MIS PELICULAS"}

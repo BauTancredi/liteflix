@@ -13,7 +13,9 @@ const Dropdown = ({ selectedCategory, selectCategory }: DropdownProps) => {
     <div className="absolute -bottom-20 z-10 w-96 bg-[#242424] py-4 px-6">
       <div className="flex items-center mb-2 justify-between">
         <p
-          className="text-2xl tracking-widest cursor-pointer"
+          className={`text-2xl tracking-widest cursor-pointer ${
+            selectedCategory === "popular" ? "" : "font-thin"
+          }`}
           onClick={() => selectCategory("popular")}
         >
           Populares
@@ -29,7 +31,9 @@ const Dropdown = ({ selectedCategory, selectCategory }: DropdownProps) => {
       </div>
       <div className="flex items-center mb-2 justify-between">
         <p
-          className="text-2xl tracking-widest cursor-pointer"
+          className={`text-2xl tracking-widest cursor-pointer ${
+            selectedCategory === "my-movies" ? "" : "font-thin"
+          }`}
           onClick={() => selectCategory("my-movies")}
         >
           Mis peliculas
