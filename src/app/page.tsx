@@ -1,7 +1,8 @@
 import Image from "next/image";
 
-import Dropdown from "./components/Dropdown";
+import Drawer from "./components/Drawer";
 import MovieList from "./components/MovieList";
+import Header from "./components/Header";
 
 const getPopularMovies = async () => {
   const result = await fetch(process.env.URL + "/api/popular", {
@@ -59,22 +60,10 @@ export default async function Home() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <header className="flex justify-between p-6">
-        <Image
-          src="/hamburger-icon.svg"
-          width={40}
-          height={40}
-          alt="hamburger icon"
-        />
-        <h1 className="text-3xl tracking-widest font-thin text-[#64EEBC]">
-          <span className="font-bold">LITE</span>
-          FLIX
-        </h1>
-        <Image src="/user-icon.svg" width={40} height={40} alt="search icon" />
-      </header>
+      <Header />
       <main>
         <section
-          className={`h-[calc(100vh-6rem)] flex flex-col justify-end w-full bg-gradient-to-t from-[#242424] `}
+          className={`h-[calc(100vh-6rem)] flex flex-col justify-end w-full bg-gradient-to-t from-[#242424]`}
         >
           <p className="text-xl tracking-widest font-thin text-center">
             ORIGINAL DE <span className="font-bold">LITEFLIX</span>
@@ -94,6 +83,7 @@ export default async function Home() {
           </div>
         </section>
         <MovieList popularMovies={popularMovies} />
+        <Drawer />
       </main>
     </div>
   );
