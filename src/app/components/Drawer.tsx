@@ -18,10 +18,16 @@ const Drawer = () => {
   const open = useDrawerStore((state) => state.open);
   const toggle = useAddMovieDrawerStore((state) => state.toggle);
 
+  // disable scroll when drawer is open
+  React.useEffect(() => {
+    if (open) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "unset";
+  }, [open]);
+
   return (
     open && (
       <>
-        <div className="bg-[#242424] h-screen absolute top-0 w-full">
+        <div className="bg-[#242424] h-screen absolute top-0 w-full overflow-hidden">
           <Header />
           <div className="px-6 mt-10">
             <ul className="flex flex-col gap-8">
