@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useMemo } from "react";
 import { useDropzone } from "react-dropzone";
 import { useAddMovieDrawerStore } from "../store";
+import Header from "./Header";
 
 const baseStyle = {
   flex: 1,
@@ -50,18 +51,17 @@ const AddMovie = () => {
 
   return (
     open && (
-      <div className="bg-[#242424] h-screen absolute top-0 w-full px-6">
-        <div className="mt-28">
+      <div className="bg-[#242424] h-screen absolute top-0 w-full ">
+        <Header />
+        <div className="mt-10 px-6">
           <h3 className="text-center tracking-widest text-[#64EEBC] text-2xl">
             Agregar pelicula
           </h3>
           <form className="flex flex-col gap-4 items-center">
             <div {...getRootProps({ style })}>
               <input {...getInputProps()} />
-              {/* <div className="flex gap-3"> */}
               <Image src="/clip.svg" width={20} height={20} alt="logo" />
               <p>Agregar un archivo</p>
-              {/* </div> */}
             </div>
             <input
               type="text"

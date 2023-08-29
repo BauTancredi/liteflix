@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between p-6 z-20 fixed w-full">
+    <header className="flex justify-between p-6 z-20 w-full top-0">
       <Image
         src={open ? "/close.svg" : "/hamburger-icon.svg"}
         width={40}
