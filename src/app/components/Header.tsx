@@ -2,11 +2,18 @@
 
 import React from "react";
 import Image from "next/image";
-import { useDrawerStore } from "../store";
+import { useDrawerStore, useAddMovieDrawerStore } from "../store";
 
 const Header = () => {
   const toggle = useDrawerStore((state) => state.toggle);
   const open = useDrawerStore((state) => state.open);
+  const toggleAddMovie = useAddMovieDrawerStore((state) => state.toggle);
+  const openAddMovie = useAddMovieDrawerStore((state) => state.open);
+
+  const handleClick = () => {
+    if (openAddMovie) toggleAddMovie();
+    toggle();
+  };
 
   return (
     <header className="flex justify-between p-6 z-20 fixed w-full">
@@ -16,7 +23,7 @@ const Header = () => {
         height={40}
         alt="hamburger icon"
         className="cursor-pointer"
-        onClick={toggle}
+        onClick={handleClick}
       />
       <h1 className="text-3xl tracking-widest font-thin text-[#64EEBC]">
         <span className="font-bold">LITE</span>

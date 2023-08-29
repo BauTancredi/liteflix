@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { useDrawerStore } from "../store";
+import { useDrawerStore, useAddMovieDrawerStore } from "../store";
 
 const options = [
   "Inicio",
@@ -15,6 +15,7 @@ const options = [
 
 const Drawer = () => {
   const open = useDrawerStore((state) => state.open);
+  const toggle = useAddMovieDrawerStore((state) => state.toggle);
 
   return (
     open && (
@@ -30,7 +31,7 @@ const Drawer = () => {
           ))}
         </ul>
 
-        <button className="flex items-center my-28 gap-4">
+        <button className="flex items-center my-28 gap-4" onClick={toggle}>
           <Image src="/plus.svg" width={25} height={25} alt="play icon" />
           <p className="tracking-widest text-2xl cursor-pointer">
             Agregar pelicula

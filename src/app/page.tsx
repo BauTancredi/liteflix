@@ -3,6 +3,7 @@ import Image from "next/image";
 import Drawer from "./components/Drawer";
 import MovieList from "./components/MovieList";
 import Header from "./components/Header";
+import AddMovie from "./components/AddMovie";
 
 const getPopularMovies = async () => {
   const result = await fetch(process.env.URL + "/api/popular", {
@@ -84,6 +85,7 @@ export default async function Home() {
         </section>
         <MovieList popularMovies={popularMovies} />
         <Drawer />
+        <AddMovie />
       </main>
     </div>
   );
