@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+
 import { useDrawerStore, useAddMovieDrawerStore } from "../store";
 
 const Header = () => {
@@ -16,20 +17,20 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between p-6 z-20 w-full top-0">
+    <header className="top-0 z-20 flex w-full justify-between p-6">
       <Image
-        src={open ? "/close.svg" : "/hamburger-icon.svg"}
-        width={40}
-        height={40}
         alt="hamburger icon"
         className="cursor-pointer"
+        height={40}
+        src={open ? "/close.svg" : "/hamburger-icon.svg"}
+        width={40}
         onClick={handleClick}
       />
-      <h1 className="text-3xl tracking-widest font-thin text-[#64EEBC]">
+      <h1 className="text-3xl font-thin tracking-widest text-[#64EEBC]">
         <span className="font-bold">LITE</span>
         FLIX
       </h1>
-      <Image src="/user-icon.svg" width={40} height={40} alt="search icon" />
+      <Image alt="search icon" height={40} src="/user-icon.svg" width={40} />
     </header>
   );
 };

@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+
 import { useDrawerStore, useAddMovieDrawerStore } from "../store";
+
 import Header from "./Header";
 
 const options = [
@@ -27,34 +29,34 @@ const Drawer = () => {
   return (
     open && (
       <>
-        <div className="bg-[#242424] h-screen absolute top-0 w-full overflow-hidden">
+        <div className="absolute top-0 h-screen w-full overflow-hidden bg-[#242424]">
           <Header />
-          <div className="px-6 mt-10">
+          <div className="mt-10 px-6">
             <ul className="flex flex-col gap-8">
               {options.map((option) => (
                 <li
                   key={option}
-                  className="tracking-widest text-xl cursor-pointer font-thin hover:text-[#64EEBC]"
+                  className="cursor-pointer text-xl font-thin tracking-widest hover:text-[#64EEBC]"
                 >
                   {option}
                 </li>
               ))}
             </ul>
 
-            <button className="flex items-center my-28 gap-4" onClick={toggle}>
+            <button className="my-28 flex items-center gap-4" onClick={toggle}>
               <Image
-                src="/plus.svg"
-                width={25}
-                height={25}
                 alt="play icon"
                 className=""
+                height={25}
+                src="/plus.svg"
+                width={25}
               />
-              <p className="tracking-widest text-xl cursor-pointer hover:text-[#64EEBC] uppercase">
+              <p className="cursor-pointer text-xl uppercase tracking-widest hover:text-[#64EEBC]">
                 Agregar pelicula
               </p>
             </button>
 
-            <button className="tracking-widest text-xl cursor-pointer hover:text-[#64EEBC] uppercase font-thin">
+            <button className="cursor-pointer text-xl font-thin uppercase tracking-widest hover:text-[#64EEBC]">
               <p>Cerrar Sesion</p>
             </button>
           </div>
@@ -63,4 +65,5 @@ const Drawer = () => {
     )
   );
 };
+
 export default Drawer;

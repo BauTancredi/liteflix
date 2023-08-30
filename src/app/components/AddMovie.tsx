@@ -2,7 +2,9 @@
 import Image from "next/image";
 import React, { useMemo } from "react";
 import { useDropzone } from "react-dropzone";
+
 import { useAddMovieDrawerStore } from "../store";
+
 import Header from "./Header";
 
 const baseStyle = {
@@ -50,36 +52,36 @@ const AddMovie = () => {
 
   return (
     open && (
-      <div className="bg-[#242424] h-screen absolute top-0 w-full ">
+      <div className="absolute top-0 h-screen w-full bg-[#242424] ">
         <Header />
         <div className="px-6">
-          <h3 className="text-center tracking-widest text-[#64EEBC] text-2xl my-20">
+          <h3 className="my-20 text-center text-2xl tracking-widest text-[#64EEBC]">
             Agregar pelicula
           </h3>
-          <form className="flex flex-col gap-4 items-center">
+          <form className="flex flex-col items-center gap-4">
             <div {...getRootProps({ style })}>
               <input {...getInputProps()} />
-              <Image src="/clip.svg" width={20} height={20} alt="logo" />
+              <Image alt="logo" height={20} src="/clip.svg" width={20} />
               <p>Agregar un archivo</p>
             </div>
             <input
-              type="text"
+              className="my-14 w-3/4 border-b-2 border-gray-300 bg-transparent text-center text-xl uppercase tracking-widest focus:border-[#64EEBC] focus:outline-none"
               placeholder="Titulo"
-              className="bg-transparent border-b-2 border-gray-300 text-center w-3/4 focus:outline-none focus:border-[#64EEBC] my-14 uppercase text-xl tracking-widest"
+              type="text"
             />
             <button
               disabled
-              className="bg-white transition-colors disabled:bg-gray-300 py-4    text-[#242424] w-3/4"
+              className="w-3/4 bg-white py-4 text-[#242424]    transition-colors disabled:bg-gray-300"
             >
-              <p className="tracking-widest text-xl uppercase">
+              <p className="text-xl uppercase tracking-widest">
                 Subir pelicula
               </p>
             </button>
             <button
+              className="w-3/4 border border-gray-400  bg-[#242424] py-4 text-2xl tracking-widest"
               onClick={toggle}
-              className="border border-gray-400 py-4  bg-[#242424] tracking-widest text-2xl w-3/4"
             >
-              <p className="tracking-widest text-xl uppercase">Salir</p>
+              <p className="text-xl uppercase tracking-widest">Salir</p>
             </button>
           </form>
         </div>

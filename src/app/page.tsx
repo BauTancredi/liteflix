@@ -64,22 +64,22 @@ export default async function Home() {
       <Header />
       <main>
         <section
-          className={`h-[calc(100vh-6rem)] flex flex-col justify-end w-full bg-gradient-to-t from-[#242424]`}
+          className={`flex h-[calc(100vh-6rem)] w-full flex-col justify-end bg-gradient-to-t from-[#242424]`}
         >
-          <p className="text-xl tracking-widest font-thin text-center">
+          <p className="text-center text-xl font-thin tracking-widest">
             ORIGINAL DE <span className="font-bold">LITEFLIX</span>
           </p>
-          <p className="text-8xl text-center tracking-widest  mt-5 mb-20 text-[#64EEBC]">
+          <p className="mb-20 mt-5 text-center  text-8xl tracking-widest text-[#64EEBC]">
             {featuredMovie.title}
           </p>
           <div className="flex flex-col items-center gap-6 ">
-            <button className="flex  py-4 w-96 justify-center gap-5 bg-[#242424]  items-center">
-              <Image src="/play_2.svg" width={30} height={30} alt="play icon" />
-              <p className="tracking-widest text-2xl font-light">REPRODUCIR</p>
+            <button className="flex  w-96 items-center justify-center gap-5 bg-[#242424]  py-4">
+              <Image alt="play icon" height={30} src="/play_2.svg" width={30} />
+              <p className="text-2xl font-light tracking-widest">REPRODUCIR</p>
             </button>
-            <button className="flex border border-gray-400 py-4 w-96  justify-center gap-5 bg-[#242424] tracking-widest text-2xl items-center">
-              <Image src="/plus.svg" width={30} height={30} alt="play icon" />
-              <p className="tracking-widest text-2xl font-light">MI LISTA</p>
+            <button className="flex w-96 items-center justify-center gap-5  border border-gray-400 bg-[#242424] py-4 text-2xl tracking-widest">
+              <Image alt="play icon" height={30} src="/plus.svg" width={30} />
+              <p className="text-2xl font-light tracking-widest">MI LISTA</p>
             </button>
           </div>
         </section>

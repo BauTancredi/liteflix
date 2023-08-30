@@ -1,6 +1,4 @@
 "use client";
-import { useState } from "react";
-
 import Image from "next/image";
 
 interface DropdownProps {
@@ -10,10 +8,10 @@ interface DropdownProps {
 
 const Dropdown = ({ selectedCategory, selectCategory }: DropdownProps) => {
   return (
-    <div className="absolute -bottom-20 z-10 w-96 bg-[#242424] py-4 px-6">
-      <div className="flex items-center mb-2 justify-between">
+    <div className="absolute -bottom-20 z-10 w-96 bg-[#242424] px-6 py-4">
+      <div className="mb-2 flex items-center justify-between">
         <p
-          className={`text-2xl tracking-widest cursor-pointer ${
+          className={`cursor-pointer text-2xl tracking-widest ${
             selectedCategory === "popular" ? "" : "font-thin"
           }`}
           onClick={() => selectCategory("popular")}
@@ -22,16 +20,16 @@ const Dropdown = ({ selectedCategory, selectCategory }: DropdownProps) => {
         </p>
         {selectedCategory === "popular" && (
           <Image
+            alt="arrow down icon"
+            height={20}
             src="/checkmark.svg"
             width={20}
-            height={20}
-            alt="arrow down icon"
           />
         )}
       </div>
-      <div className="flex items-center mb-2 justify-between">
+      <div className="mb-2 flex items-center justify-between">
         <p
-          className={`text-2xl tracking-widest cursor-pointer ${
+          className={`cursor-pointer text-2xl tracking-widest ${
             selectedCategory === "my-movies" ? "" : "font-thin"
           }`}
           onClick={() => selectCategory("my-movies")}
@@ -40,10 +38,10 @@ const Dropdown = ({ selectedCategory, selectCategory }: DropdownProps) => {
         </p>
         {selectedCategory === "my-movies" && (
           <Image
+            alt="arrow down icon"
+            height={20}
             src="/checkmark.svg"
             width={20}
-            height={20}
-            alt="arrow down icon"
           />
         )}
       </div>

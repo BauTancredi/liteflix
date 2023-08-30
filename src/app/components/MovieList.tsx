@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
 
 import Dropdown from "./Dropdown";
-import { useState } from "react";
 
 interface Movie {
   id: number;
@@ -21,40 +21,40 @@ const convertDateToYear = (date: string) => {
 
 const MovieCard = ({ movie }: { movie: Movie }) => {
   return (
-    <div className="relative cursor-pointer group">
+    <div className="group relative cursor-pointer">
       <Image
-        src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
         alt={movie.title}
-        width={500}
-        height={280}
         className="w-full rounded-md "
+        height={280}
+        src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
+        width={500}
       />
-      <div className="group-hover:hidden absolute w-full h-full  top-0 opacity-90 flex flex-col justify-end items-center bg-gradient-to-t from-gray-900">
-        <Image src="/play.svg" width={80} height={80} alt="play icon" />
-        <p className="text-center text-2xl tracking-widest my-8 font-light">
+      <div className="absolute top-0 flex h-full  w-full flex-col items-center justify-end bg-gradient-to-t from-gray-900 opacity-90 group-hover:hidden">
+        <Image alt="play icon" height={80} src="/play.svg" width={80} />
+        <p className="my-8 text-center text-2xl font-light tracking-widest">
           {movie.title}
         </p>
       </div>
-      <div className="group-hover:flex hidden absolute w-full h-full top-0  flex-col justify-end  bg-black/50 px-10">
-        <div className="flex gap-3 items-center text-left">
-          <Image src="/play.svg" width={40} height={40} alt="play icon" />
-          <p className="text-xl tracking-widest font-light  text-left">
+      <div className="absolute top-0 hidden h-full w-full flex-col  justify-end bg-black/50  px-10 group-hover:flex">
+        <div className="flex items-center gap-3 text-left">
+          <Image alt="play icon" height={40} src="/play.svg" width={40} />
+          <p className="text-left text-xl font-light  tracking-widest">
             {movie.title}
           </p>
         </div>
-        <div className="flex gap-3 justify-between text-xl">
+        <div className="flex justify-between gap-3 text-xl">
           <div className="flex items-center gap-3">
             <Image
+              alt="play icon"
+              height={25}
               src="/rating-star.svg"
               width={25}
-              height={25}
-              alt="play icon"
             />
-            <p className="text-center tracking-widest font-light ">
+            <p className="text-center font-light tracking-widest ">
               {movie.vote_average}
             </p>
           </div>
-          <p className="text-center tracking-widest my-6 font-light">
+          <p className="my-6 text-center font-light tracking-widest">
             {convertDateToYear(movie.release_date)}
           </p>
         </div>
@@ -79,25 +79,25 @@ export default function MovieList({ popularMovies }: MovieListProps) {
   };
 
   return (
-    <section className="p-6 bg-[#242424]">
+    <section className="bg-[#242424] p-6">
       <div
         className="relative flex justify-center gap-3 "
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
-        <h3 className="text-2xl tracking-widest text-center mt-10 mb-10 cursor-pointer font-thin">
+        <h3 className="my-10 cursor-pointer text-center text-2xl font-thin tracking-widest">
           VER: &nbsp;
           <span className="font-bold ">
             {selectedCategory === "popular" ? "POPULARES" : "MIS PELICULAS"}
           </span>
         </h3>
         <Image
-          src="/arrow.svg"
-          width={20}
-          height={20}
           alt="arrow down icon"
           className={`cursor-pointer ${
             isDropdownOpen ? "rotate-180" : ""
           } transition-transform`}
+          height={20}
+          src="/arrow.svg"
+          width={20}
         />
         {isDropdownOpen && (
           <Dropdown
@@ -106,7 +106,7 @@ export default function MovieList({ popularMovies }: MovieListProps) {
           />
         )}
       </div>
-      <ul className="flex gap-5 flex-col">
+      <ul className="flex flex-col gap-5">
         {selectedCategory === "popular" &&
           popularMovies.map((movie) => (
             <li key={movie.id}>
