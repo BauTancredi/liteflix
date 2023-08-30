@@ -35,8 +35,8 @@ const rejectStyle = {
 };
 
 const AddMovie = () => {
-  const open = useAddMovieDrawerStore((state) => state.open);
-  const toggle = useAddMovieDrawerStore((state) => state.toggle);
+  const openAddMovieDrawer = useAddMovieDrawerStore((state) => state.open);
+  const toggleAddMovieDrawer = useAddMovieDrawerStore((state) => state.toggle);
   const { getRootProps, getInputProps, isFocused, isDragAccept, isDragReject } =
     useDropzone({ accept: { "image/*": [] } });
 
@@ -51,7 +51,7 @@ const AddMovie = () => {
   );
 
   return (
-    open && (
+    openAddMovieDrawer && (
       <div className="absolute top-0 h-screen w-full bg-[#242424] ">
         <Header />
         <div className="px-6">
@@ -79,7 +79,7 @@ const AddMovie = () => {
             </button>
             <button
               className="w-3/4 border border-gray-400  bg-[#242424] py-4 text-2xl tracking-widest"
-              onClick={toggle}
+              onClick={toggleAddMovieDrawer}
             >
               <p className="text-xl uppercase tracking-widest">Salir</p>
             </button>

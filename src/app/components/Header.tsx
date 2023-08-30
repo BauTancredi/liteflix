@@ -6,14 +6,14 @@ import Image from "next/image";
 import { useDrawerStore, useAddMovieDrawerStore } from "../store";
 
 const Header = () => {
-  const toggle = useDrawerStore((state) => state.toggle);
-  const open = useDrawerStore((state) => state.open);
-  const toggleAddMovie = useAddMovieDrawerStore((state) => state.toggle);
-  const openAddMovie = useAddMovieDrawerStore((state) => state.open);
+  const toggleDrawer = useDrawerStore((state) => state.toggle);
+  const openDrawer = useDrawerStore((state) => state.open);
+  const toggleAddMovieDrawer = useAddMovieDrawerStore((state) => state.toggle);
+  const openAddMovieDrawer = useAddMovieDrawerStore((state) => state.open);
 
   const handleClick = () => {
-    if (openAddMovie) toggleAddMovie();
-    toggle();
+    if (openAddMovieDrawer) toggleAddMovieDrawer();
+    toggleDrawer();
   };
 
   return (
@@ -22,7 +22,7 @@ const Header = () => {
         alt="hamburger icon"
         className="cursor-pointer"
         height={40}
-        src={open ? "/close.svg" : "/hamburger-icon.svg"}
+        src={openDrawer ? "/close.svg" : "/hamburger-icon.svg"}
         width={40}
         onClick={handleClick}
       />

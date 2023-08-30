@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 
+import { Category } from "../types";
+
 interface DropdownProps {
-  selectedCategory: "popular" | "my-movies";
-  selectCategory: (category: "popular" | "my-movies") => void;
+  selectedCategory: Category;
+  selectCategory: (category: Category) => void;
 }
 
 const Dropdown = ({ selectedCategory, selectCategory }: DropdownProps) => {

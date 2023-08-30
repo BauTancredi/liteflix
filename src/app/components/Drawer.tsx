@@ -3,37 +3,28 @@ import React from "react";
 import Image from "next/image";
 
 import { useDrawerStore, useAddMovieDrawerStore } from "../store";
+import { OPTIONS } from "../constants";
 
 import Header from "./Header";
 
-const options = [
-  "Inicio",
-  "Series",
-  "Peliculas",
-  "Agregadas recientemente",
-  "Populares",
-  "Mis Peliculas",
-  "Mi lista",
-];
-
 const Drawer = () => {
-  const open = useDrawerStore((state) => state.open);
-  const toggle = useAddMovieDrawerStore((state) => state.toggle);
+  const openDrawer = useDrawerStore((state) => state.open);
+  const toggleDrawer = useAddMovieDrawerStore((state) => state.toggle);
 
   // disable scroll when drawer is open
   React.useEffect(() => {
-    if (open) document.body.style.overflow = "hidden";
+    if (openDrawer) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "unset";
-  }, [open]);
+  }, [openDrawer]);
 
   return (
-    open && (
+    openDrawer && (
       <>
         <div className="absolute top-0 h-screen w-full overflow-hidden bg-[#242424]">
           <Header />
           <div className="mt-10 px-6">
             <ul className="flex flex-col gap-8">
-              {options.map((option) => (
+              {OPTIONS.map((option) => (
                 <li
                   key={option}
                   className="cursor-pointer text-xl font-thin tracking-widest hover:text-[#64EEBC]"
@@ -43,7 +34,10 @@ const Drawer = () => {
               ))}
             </ul>
 
-            <button className="my-28 flex items-center gap-4" onClick={toggle}>
+            <button
+              className="my-28 flex items-center gap-4"
+              onClick={toggleDrawer}
+            >
               <Image
                 alt="play icon"
                 className=""
