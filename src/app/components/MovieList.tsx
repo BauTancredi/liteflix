@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 import { Category, Movie } from "../types";
 
@@ -22,8 +23,11 @@ export default function MovieList({ popularMovies }: MovieListProps) {
 
   return (
     <section className="bg-[#242424] p-6 xl:bg-transparent xl:pr-16">
-      <div
+      <motion.div
+        animate={{ opacity: 1 }}
         className="relative flex justify-center gap-3 "
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
         <h3 className="my-10 cursor-pointer text-center text-2xl font-thin tracking-widest xl:text-left xl:text-xl">
@@ -47,15 +51,20 @@ export default function MovieList({ popularMovies }: MovieListProps) {
             selectedCategory={selectedCategory}
           />
         )}
-      </div>
-      <ul className="flex flex-col gap-5">
+      </motion.div>
+      <motion.ul className="flex flex-col gap-5" transition={{ delay: 1 }}>
         {selectedCategory === "popular" &&
-          popularMovies.map((movie) => (
-            <li key={movie.id}>
+          popularMovies.map((movie, index) => (
+            <motion.li
+              key={movie.id}
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              transition={{ duration: 2, delay: index * 0.1 }}
+            >
               <MovieCard movie={movie} />
-            </li>
+            </motion.li>
           ))}
-      </ul>
+      </motion.ul>
     </section>
   );
 }

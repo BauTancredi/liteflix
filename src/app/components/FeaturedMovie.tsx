@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { Movie } from "../types";
 
@@ -12,13 +15,28 @@ const FeaturedMovie = ({ featuredMovie }: FeaturedMovieProps) => {
     <section
       className={`flex h-[calc(100vh-6rem)] w-full flex-col justify-end bg-gradient-to-t from-[#242424] xl:bg-none xl:pb-32 xl:pl-16`}
     >
-      <p className="text-center text-xl font-thin tracking-widest xl:text-left">
+      <motion.p
+        animate={{ opacity: 1, x: 0 }}
+        className="text-center text-xl font-thin tracking-widest xl:text-left"
+        initial={{ opacity: 0, x: -100 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
         ORIGINAL DE <span className="font-bold">LITEFLIX</span>
-      </p>
-      <p className="mb-20 mt-5 text-center  text-8xl tracking-widest text-[#64EEBC] xl:text-left xl:text-9xl">
+      </motion.p>
+      <motion.p
+        animate={{ opacity: 1, x: 0 }}
+        className="mb-20 mt-5 text-center  text-8xl tracking-widest text-[#64EEBC] xl:text-left xl:text-9xl"
+        initial={{ opacity: 0, x: -100 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
         {featuredMovie.title}
-      </p>
-      <div className="flex flex-col items-center gap-6 xl:flex-row">
+      </motion.p>
+      <motion.div
+        animate={{ opacity: 1 }}
+        className="flex flex-col items-center gap-6 xl:flex-row"
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
         <button className="flex   w-3/4 items-center justify-center gap-5 bg-[#242424] py-4  xl:w-96">
           <Image
             alt="play icon"
@@ -39,7 +57,7 @@ const FeaturedMovie = ({ featuredMovie }: FeaturedMovieProps) => {
             MI LISTA
           </p>
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -42,16 +42,6 @@ export default async function Home() {
   const popularMovies: Movie[] = data.data.results.splice(0, 4);
   const featuredMovie: Movie = data2.res.results[3];
 
-  // use poster_path or backdrop_path depending on the size of the screen
-  const featuredMovieImageUrl = `https://image.tmdb.org/t/p/original`;
-
-  // check if size is more than 1000px
-  // if (window.innerWidth > 1000) {
-  //   featuredMovieImageUrl.concat(featuredMovie.backdrop_path);
-  // } else {
-  //   featuredMovieImageUrl.concat(featuredMovie.poster_path);
-  // }
-
   return (
     <div
       className="xl:h-screen"
