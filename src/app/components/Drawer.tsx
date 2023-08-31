@@ -22,7 +22,7 @@ const Drawer = () => {
       <>
         <div className="absolute top-0 h-screen w-full overflow-hidden bg-[#242424]">
           <Header />
-          <div className="mt-10 px-6">
+          <div className="mt-10 px-6 lg:px-16">
             <ul className="flex flex-col gap-8">
               {OPTIONS.map((option) => (
                 <li

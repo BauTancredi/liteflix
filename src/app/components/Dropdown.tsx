@@ -10,7 +10,7 @@ interface DropdownProps {
 
 const Dropdown = ({ selectedCategory, selectCategory }: DropdownProps) => {
   return (
-    <div className="absolute -bottom-20 z-10 w-96 bg-[#242424] px-6 py-4">
+    <div className="absolute -bottom-20 z-10 w-96 bg-[#242424] px-6 py-4 xl:-left-32">
       <div className="mb-2 flex items-center justify-between">
         <p
           className={`cursor-pointer text-2xl tracking-widest ${

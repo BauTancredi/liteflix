@@ -21,12 +21,12 @@ export default function MovieList({ popularMovies }: MovieListProps) {
   };
 
   return (
-    <section className="bg-[#242424] p-6">
+    <section className="bg-[#242424] p-6 xl:bg-transparent xl:pr-16">
       <div
         className="relative flex justify-center gap-3 "
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
-        <h3 className="my-10 cursor-pointer text-center text-2xl font-thin tracking-widest">
+        <h3 className="my-10 cursor-pointer text-center text-2xl font-thin tracking-widest xl:text-left xl:text-xl">
           VER: &nbsp;
           <span className="font-bold ">
             {selectedCategory === "popular" ? "POPULARES" : "MIS PELICULAS"}

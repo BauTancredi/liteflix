@@ -12,25 +12,25 @@ const MovieCard = ({ movie }: MovieCardProps) => {
     <div className="group relative cursor-pointer">
       <Image
         alt={movie.title}
-        className="w-full rounded-md "
+        className="w-full rounded-md xl:w-80"
         height={280}
         src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
         width={500}
       />
-      <div className="absolute top-0 flex h-full  w-full flex-col items-center justify-end bg-gradient-to-t from-gray-900 opacity-90 group-hover:hidden">
-        <Image alt="play icon" height={80} src="/play.svg" width={80} />
-        <p className="my-8 text-center text-2xl font-light tracking-widest">
+      <div className="absolute top-0 flex h-full w-full flex-col items-center justify-center bg-gradient-to-t from-gray-900 opacity-90 group-hover:hidden ">
+        <Image alt="play icon" height={60} src="/play.svg" width={60} />
+        <p className="absolute bottom-1 text-center text-2xl font-light tracking-widest xl:text-sm">
           {movie.title}
         </p>
       </div>
-      <div className="absolute top-0 hidden h-full w-full flex-col  justify-end bg-black/50  px-10 group-hover:flex">
+      <div className="absolute top-0 hidden h-full w-full flex-col  justify-end bg-black/50  px-10 group-hover:flex xl:px-2">
         <div className="flex items-center gap-3 text-left">
           <Image alt="play icon" height={40} src="/play.svg" width={40} />
-          <p className="text-left text-xl font-light  tracking-widest">
+          <p className="text-left text-xl font-light  tracking-widest xl:text-sm">
             {movie.title}
           </p>
         </div>
-        <div className="flex justify-between gap-3 text-xl">
+        <div className="flex justify-between gap-3 text-xl ">
           <div className="flex items-center gap-3">
             <Image
               alt="play icon"
