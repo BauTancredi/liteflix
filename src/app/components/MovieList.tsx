@@ -38,7 +38,7 @@ export default function MovieList({ popularMovies }: MovieListProps) {
             isDropdownOpen ? "rotate-180" : ""
           } transition-transform`}
           height={20}
-          src="/arrow.svg"
+          src="/assets/arrow.svg"
           width={20}
         />
         {isDropdownOpen && (

@@ -24,7 +24,7 @@ const Dropdown = ({ selectedCategory, selectCategory }: DropdownProps) => {
           <Image
             alt="arrow down icon"
             height={20}
-            src="/checkmark.svg"
+            src="/assets/checkmark.svg"
             width={20}
           />
         )}
@@ -42,7 +42,7 @@ const Dropdown = ({ selectedCategory, selectCategory }: DropdownProps) => {
           <Image
             alt="arrow down icon"
             height={20}
-            src="/checkmark.svg"
+            src="/assetscheckmark.svg"
             width={20}
           />
         )}

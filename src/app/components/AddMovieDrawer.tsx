@@ -61,7 +61,7 @@ const AddMovie = () => {
           <form className="flex flex-col items-center gap-4">
             <div {...getRootProps({ style })}>
               <input {...getInputProps()} />
-              <Image alt="logo" height={20} src="/clip.svg" width={20} />
+              <Image alt="logo" height={20} src="/assets/clip.svg" width={20} />
               <p>Agregar un archivo</p>
             </div>
             <input

@@ -42,7 +42,7 @@ const Drawer = () => {
                 alt="play icon"
                 className=""
                 height={25}
-                src="/plus.svg"
+                src="/assets/plus.svg"
                 width={25}
               />
               <p className="cursor-pointer text-xl uppercase tracking-widest hover:text-[#64EEBC]">

@@ -18,14 +18,24 @@ const MovieCard = ({ movie }: MovieCardProps) => {
         width={500}
       />
       <div className="absolute top-0 flex h-full w-full flex-col items-center justify-center bg-gradient-to-t from-gray-900 opacity-90 group-hover:hidden ">
-        <Image alt="play icon" height={60} src="/play.svg" width={60} />
+        <Image
+          alt="play icon"
+          height={60}
+          src="/assets/play-rounded.svg"
+          width={60}
+        />
         <p className="absolute bottom-1 text-center text-2xl font-light tracking-widest xl:text-sm">
           {movie.title}
         </p>
       </div>
       <div className="absolute top-0 hidden h-full w-full flex-col  justify-end bg-black/50  px-10 group-hover:flex xl:px-2">
         <div className="flex items-center gap-3 text-left">
-          <Image alt="play icon" height={40} src="/play.svg" width={40} />
+          <Image
+            alt="play icon"
+            height={40}
+            src="/assets/play-rounded.svg"
+            width={40}
+          />
           <p className="text-left text-xl font-light  tracking-widest xl:text-sm">
             {movie.title}
           </p>
@@ -35,7 +45,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
             <Image
               alt="play icon"
               height={25}
-              src="/rating-star.svg"
+              src="/assets/rating-star.svg"
               width={25}
             />
             <p className="text-center font-light tracking-widest ">

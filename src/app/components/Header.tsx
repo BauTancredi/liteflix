@@ -23,7 +23,7 @@ const Header = () => {
           alt="hamburger icon"
           className="cursor-pointer"
           height={40}
-          src={openDrawer ? "/close.svg" : "/hamburger-icon.svg"}
+          src={openDrawer ? "/assets/close.svg" : "/assets/hamburger-icon.svg"}
           width={40}
           onClick={handleClick}
         />
@@ -31,7 +31,12 @@ const Header = () => {
           <span className="font-bold">LITE</span>
           FLIX
         </h1>
-        <Image alt="search icon" height={40} src="/user-icon.svg" width={40} />
+        <Image
+          alt="search icon"
+          height={40}
+          src="/assets/user-icon.svg"
+          width={40}
+        />
       </header>
       <header className="hidden justify-between px-16 pt-8 xl:flex">
         <div className="flex items-center gap-16">
@@ -47,7 +52,7 @@ const Header = () => {
               alt="play icon"
               className=""
               height={25}
-              src="/plus.svg"
+              src="/assets/plus.svg"
               width={25}
             />
             <p className="cursor-pointer text-xl uppercase tracking-widest hover:text-[#64EEBC]">
@@ -60,15 +65,22 @@ const Header = () => {
             alt="hamburger icon"
             className="cursor-pointer"
             height={40}
-            src={openDrawer ? "/close.svg" : "/hamburger-icon.svg"}
+            src={
+              openDrawer ? "/assets/close.svg" : "/assets/hamburger-icon.svg"
+            }
             width={40}
             onClick={handleClick}
           />
-          <Image alt="search icon" height={40} src="/bell.svg" width={40} />
           <Image
             alt="search icon"
             height={40}
-            src="/user-icon.svg"
+            src="/assets/bell.svg"
+            width={40}
+          />
+          <Image
+            alt="search icon"
+            height={40}
+            src="/assets/user-icon.svg"
             width={40}
           />
         </div>
