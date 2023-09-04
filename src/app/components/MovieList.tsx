@@ -22,7 +22,7 @@ export default function MovieList({ popularMovies }: MovieListProps) {
   };
 
   return (
-    <section className="bg-[#242424] p-6 xl:bg-transparent xl:pr-16">
+    <section className="bg-[#242424] p-6 xl:absolute xl:right-0 xl:top-10 xl:bg-transparent xl:pr-16">
       <motion.div
         animate={{ opacity: 1 }}
         className="relative flex justify-center gap-3 "

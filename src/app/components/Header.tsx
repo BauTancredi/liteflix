@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="top-0 z-20 flex w-full justify-between p-6 xl:hidden">
+      <header className="absolute top-0 z-20 flex w-full justify-between bg-transparent p-6 xl:hidden">
         <Image
           alt="hamburger icon"
           className="cursor-pointer"
@@ -38,7 +38,7 @@ const Header = () => {
           width={40}
         />
       </header>
-      <header className="hidden justify-between px-16 pt-8 xl:flex">
+      <header className="absolute hidden w-screen justify-between px-16 pt-8 xl:flex z-20">
         <div className="flex items-center gap-16">
           <h1 className="text-3xl font-thin tracking-widest text-[#64EEBC]">
             <span className="font-bold">LITE</span>

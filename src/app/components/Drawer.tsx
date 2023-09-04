@@ -5,8 +5,6 @@ import Image from "next/image";
 import { useDrawerStore, useAddMovieDrawerStore } from "../store";
 import { OPTIONS } from "../constants";
 
-import Header from "./Header";
-
 const Drawer = () => {
   const openDrawer = useDrawerStore((state) => state.open);
   const toggleDrawer = useAddMovieDrawerStore((state) => state.toggle);
@@ -21,8 +19,7 @@ const Drawer = () => {
     openDrawer && (
       <>
         <div className="absolute top-0 h-screen w-full overflow-hidden bg-[#242424]">
-          <Header />
-          <div className="mt-10 px-6 lg:px-16">
+          <div className="mt-28 px-6 xl:px-16">
             <ul className="flex flex-col gap-8">
               {OPTIONS.map((option) => (
                 <li

@@ -5,8 +5,6 @@ import { useDropzone } from "react-dropzone";
 
 import { useAddMovieDrawerStore } from "../store";
 
-import Header from "./Header";
-
 const baseStyle = {
   flex: 1,
   display: "flex",
@@ -53,8 +51,7 @@ const AddMovie = () => {
   return (
     openAddMovieDrawer && (
       <div className="absolute top-0 h-screen w-full bg-[#242424] ">
-        <Header />
-        <div className="px-6">
+        <div className="px-6 py-20">
           <h3 className="my-20 text-center text-2xl tracking-widest text-[#64EEBC]">
             Agregar pelicula
           </h3>

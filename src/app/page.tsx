@@ -1,6 +1,5 @@
 import Drawer from "./components/Drawer";
 import MovieList from "./components/MovieList";
-import Header from "./components/Header";
 import AddMovieDrawer from "./components/AddMovieDrawer";
 import FeaturedMovie from "./components/FeaturedMovie";
 import { Movie } from "./types";
@@ -43,17 +42,7 @@ export default async function Home() {
   const featuredMovie: Movie = data2.res.results[3];
 
   return (
-    <div
-      className="xl:h-screen"
-      // className={`bg-[url(https://image.tmdb.org/t/p/original${featuredMovie.poster_path})]`}
-      style={{
-        backgroundImage: `url(https://image.tmdb.org/t/p/original${featuredMovie.poster_path})`,
-        backgroundSize: "130%",
-        backgroundPosition: "top center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <Header />
+    <div className="xl:h-screen">
       <main>
         <div className="xl:flex">
           <FeaturedMovie featuredMovie={featuredMovie} />

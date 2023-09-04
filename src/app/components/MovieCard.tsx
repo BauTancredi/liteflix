@@ -12,7 +12,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
     <div className="group relative cursor-pointer">
       <Image
         alt={movie.title}
-        className="w-full rounded-md xl:w-80"
+        className="w-full rounded-md xl:w-72"
         height={280}
         src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
         width={500}
