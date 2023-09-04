@@ -3,5 +3,5 @@ export default async function getFeaturedMovie() {
     "https://api.themoviedb.org/3/movie/now_playing?api_key=6f26fd536dd6192ec8a57e94141f8b20"
   ).then((res) => res.json());
 
-  return res.results[3];
+  return res.results[0];
 }
