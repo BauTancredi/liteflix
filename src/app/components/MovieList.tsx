@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -10,9 +11,11 @@ import MovieCard from "./MovieCard";
 
 interface MovieListProps {
   popularMovies: Movie[];
+  // partial of Movie type
+  myMovies: Partial<Movie>[];
 }
 
-export default function MovieList({ popularMovies }: MovieListProps) {
+export default function MovieList({ popularMovies, myMovies }: MovieListProps) {
   const [selectedCategory, setSelectedCategory] = useState<Category>("popular");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -61,7 +64,21 @@ export default function MovieList({ popularMovies }: MovieListProps) {
               initial={{ opacity: 0 }}
               transition={{ duration: 2, delay: index * 0.1 }}
             >
-              <MovieCard movie={movie} />
+              <MovieCard
+                movie={movie}
+                src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
+              />
+            </motion.li>
+          ))}
+        {selectedCategory === "my-movies" &&
+          myMovies.map((movie, index) => (
+            <motion.li
+              key={movie.id}
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              transition={{ duration: 2, delay: index * 0.1 }}
+            >
+              <MovieCard movie={movie} src={movie.backdrop_path!} />
             </motion.li>
           ))}
       </motion.ul>

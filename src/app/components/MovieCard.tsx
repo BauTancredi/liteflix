@@ -4,17 +4,18 @@ import convertDateToYear from "../utils/convertDateToYear";
 import { Movie } from "../types";
 
 interface MovieCardProps {
-  movie: Movie;
+  movie: Partial<Movie>;
+  src: string;
 }
 
-const MovieCard = ({ movie }: MovieCardProps) => {
+const MovieCard = ({ movie, src }: MovieCardProps) => {
   return (
     <div className="group relative cursor-pointer">
       <Image
-        alt={movie.title}
-        className="w-full rounded-md xl:w-72"
+        alt={movie.title!}
+        className="aspect-video w-full rounded-md xl:w-72"
         height={280}
-        src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
+        src={src}
         width={500}
       />
       <div className="absolute top-0 flex h-full w-full flex-col items-center justify-center bg-gradient-to-t from-gray-900 opacity-90 group-hover:hidden ">
@@ -53,7 +54,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
             </p>
           </div>
           <p className="my-6 text-center font-light tracking-widest">
-            {convertDateToYear(movie.release_date)}
+            {convertDateToYear(movie.release_date!)}
           </p>
         </div>
       </div>
