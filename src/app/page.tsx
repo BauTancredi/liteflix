@@ -3,48 +3,17 @@ import MovieList from "./components/MovieList";
 import AddMovieDrawer from "./components/AddMovieDrawer";
 import FeaturedMovie from "./components/FeaturedMovie";
 import { Movie } from "./types";
-
-const getPopularMovies = async () => {
-  const result = await fetch(process.env.URL + "/api/popular", {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    method: "GET",
-  });
-
-  if (result.ok) {
-    return result.json();
-  }
-
-  return [];
-};
-
-const getFeaturedMovie = async () => {
-  const result = await fetch(process.env.URL + "/api/featured", {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    method: "GET",
-  });
-
-  if (result.ok) {
-    return result.json();
-  }
-
-  return [];
-};
+import getPopularMovies from "./utils/getPopularMovies";
+import getFeaturedMovie from "./utils/getFeaturedMovie";
 
 export default async function Home() {
-  const data = await getPopularMovies();
-  const data2 = await getFeaturedMovie();
-
-  const popularMovies: Movie[] = data.data.results.splice(0, 4);
-  const featuredMovie: Movie = data2.res.results[3];
+  const popularMovies: Movie[] = await getPopularMovies();
+  const featuredMovie: Movie = await getFeaturedMovie();
 
   return (
-    <div className="xl:h-screen">
+    <div>
       <main>
-        <div className="xl:flex">
+        <div>
           <FeaturedMovie featuredMovie={featuredMovie} />
           <MovieList popularMovies={popularMovies} />
         </div>

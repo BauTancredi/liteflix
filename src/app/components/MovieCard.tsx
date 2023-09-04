@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { convertDateToYear } from "../utils";
+import convertDateToYear from "../utils/convertDateToYear";
 import { Movie } from "../types";
 
 interface MovieCardProps {
