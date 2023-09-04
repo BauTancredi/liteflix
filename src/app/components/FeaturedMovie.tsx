@@ -61,7 +61,7 @@ const FeaturedMovie = ({ featuredMovie }: FeaturedMovieProps) => {
         </motion.p>
         <motion.p
           animate={{ opacity: 1, x: 0 }}
-          className="mb-20 mt-5 text-center  text-8xl tracking-widest text-[#64EEBC] xl:w-1/2 xl:text-left xl:text-9xl"
+          className="mb-20 mt-5 w-3/4  text-center text-8xl tracking-widest text-[#64EEBC] xl:w-1/2 xl:text-left xl:text-9xl"
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
